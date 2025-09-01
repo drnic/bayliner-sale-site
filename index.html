@@ -415,11 +415,11 @@
 
                         <!-- CTA Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <button
-                                    class="btn-primary bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
-                                <i data-lucide="phone" class="h-5 w-5 mr-2 phone-shake"></i>
-                                Schedule Demo
-                            </button>
+                            <a href="#contact"
+                               class="btn-primary bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center no-underline">
+                                <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                Contact
+                            </a>
                             <button onclick="openLightbox(0)"
                                     class="border-2 border-border hover:bg-muted text-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all">
                                 <i data-lucide="images" class="h-5 w-5 mr-2"></i>
@@ -714,22 +714,31 @@
                         <p class="text-lg text-muted-foreground">Jindalee boat ramp, Brisbane</p>
                     </div>
 
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="grid md:grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div
-                                 class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center phone-shake cursor-pointer">
-                                <i data-lucide="phone" class="h-5 w-5 mr-2"></i>
-                                Call to Schedule Demo
-                            </div>
+                            <a href="sms:0437276076?body=Hi, I'm interested in your 2014 Bayliner 175 for sale."
+                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center cursor-pointer no-underline">
+                                <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
+                                Text Questions
+                            </a>
                             <p class="text-sm text-muted-foreground mt-2">Quick response guaranteed</p>
                         </div>
 
                         <div class="text-center">
-                            <div
-                                 class="border-2 border-border hover:bg-muted text-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all cursor-pointer">
+                            <a href="tel:0437276076"
+                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center phone-shake cursor-pointer no-underline">
+                                <i data-lucide="phone" class="h-5 w-5 mr-2"></i>
+                                Call to Ask
+                            </a>
+                            <p class="text-sm text-muted-foreground mt-2">Speak directly with owner</p>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="mailto:?subject=Inquiry about 2014 Bayliner 175&body=Hi, I'm interested in your 2014 Bayliner 175 for sale. Please send me more details."
+                               class="border-2 border-border hover:bg-muted text-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all cursor-pointer no-underline">
                                 <i data-lucide="mail" class="h-5 w-5 mr-2"></i>
                                 Send Email Inquiry
-                            </div>
+                            </a>
                             <p class="text-sm text-muted-foreground mt-2">Detailed information available</p>
                         </div>
                     </div>
