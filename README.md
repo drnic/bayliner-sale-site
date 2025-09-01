@@ -2,6 +2,8 @@
 
 A single-page website showcasing a 2014 Bayliner 175 boat for sale, built with Ruby/Sinatra for easy deployment.
 
+**Live Site**: <https://bayliner175forsale.com/>
+
 ## Features
 
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
