@@ -17,6 +17,14 @@
             })(window, document, 'script', 'dataLayer', 'GTM-TBL95F8R');</script>
         <!-- End Google Tag Manager -->
 
+        <!-- Google tag (gtag.js) -->
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() { dataLayer.push(arguments) }
+            gtag('js', new Date())
+            gtag('config', 'AW-1053660181');
+        </script>
+
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -834,16 +842,16 @@
                         gtmEvents.sendEvent('phone_copy', {
                             'event_category': 'conversion',
                             'event_label': 'Phone number copied to clipboard'
-                        });
+                        })
                         gtmEvents.sendEvent('high_intent_action', {
                             'action_type': 'phone_copy',
                             'event_category': 'conversion'
-                        });
+                        })
                         gtmEvents.sendEvent('made_contact', {
                             'contact_method': 'phone_copy',
                             'event_category': 'conversion',
                             'event_label': 'User copied contact info - likely to make contact'
-                        });
+                        })
 
                         // Success feedback
                         const statusElement = document.getElementById('phoneNumberStatus')
@@ -859,22 +867,22 @@
                     }).catch(() => {
                         // Fallback for older browsers
                         document.execCommand('copy')
-                        
+
                         // Send GTM events for fallback method too
                         gtmEvents.sendEvent('phone_copy', {
                             'event_category': 'conversion',
                             'event_label': 'Phone number copied to clipboard (fallback)'
-                        });
+                        })
                         gtmEvents.sendEvent('high_intent_action', {
                             'action_type': 'phone_copy',
                             'event_category': 'conversion'
-                        });
+                        })
                         gtmEvents.sendEvent('made_contact', {
                             'contact_method': 'phone_copy',
                             'event_category': 'conversion',
                             'event_label': 'User copied contact info - likely to make contact'
-                        });
-                        
+                        })
+
                         const statusElement = document.getElementById('phoneNumberStatus')
                         const originalText = statusElement.textContent
                         statusElement.textContent = 'Phone number copied!'
@@ -968,7 +976,7 @@
                     'image_name': lightboxImages[imageIndex] ? lightboxImages[imageIndex].title : `Image ${imageIndex + 1}`,
                     'event_category': 'engagement',
                     'event_label': `Clicked image ${imageIndex + 1} to open lightbox`
-                });
+                })
 
                 const lightbox = document.getElementById('lightbox')
                 currentLightboxIndex = imageIndex
@@ -1069,59 +1077,59 @@
                     '75': false,
                     '100': false
                 },
-                
+
                 // Send event to GTM dataLayer
-                sendEvent: function(eventName, parameters = {}) {
+                sendEvent: function (eventName, parameters = {}) {
                     if (window.dataLayer) {
                         window.dataLayer.push({
                             'event': eventName,
                             ...parameters
-                        });
-                        console.log('GTM Event:', eventName, parameters);
+                        })
+                        console.log('GTM Event:', eventName, parameters)
                     }
                 },
-                
+
                 // Track scroll depth
-                trackScrollDepth: function() {
+                trackScrollDepth: function () {
                     const scrollPercent = Math.round(
                         (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
                     );
-                    
+
                     // Check each threshold
                     ['25', '50', '75', '100'].forEach(threshold => {
-                        const numThreshold = parseInt(threshold);
+                        const numThreshold = parseInt(threshold)
                         if (scrollPercent >= numThreshold && !this.scrollDepthTracked[threshold]) {
-                            this.scrollDepthTracked[threshold] = true;
+                            this.scrollDepthTracked[threshold] = true
                             this.sendEvent('scroll_depth', {
                                 'scroll_depth': numThreshold,
                                 'event_category': 'engagement',
                                 'event_label': `${numThreshold}% page scroll`
-                            });
+                            })
                         }
-                    });
+                    })
                 },
-                
+
                 // Track contact section visibility
-                trackContactSectionView: function() {
-                    const contactSection = document.getElementById('contact');
-                    if (!contactSection || contactSection.hasAttribute('data-viewed')) return;
-                    
+                trackContactSectionView: function () {
+                    const contactSection = document.getElementById('contact')
+                    if (!contactSection || contactSection.hasAttribute('data-viewed')) return
+
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                                contactSection.setAttribute('data-viewed', 'true');
+                                contactSection.setAttribute('data-viewed', 'true')
                                 this.sendEvent('contact_section_view', {
                                     'event_category': 'engagement',
                                     'event_label': 'contact section visible'
-                                });
-                                observer.unobserve(contactSection);
+                                })
+                                observer.unobserve(contactSection)
                             }
-                        });
-                    }, { threshold: 0.5 });
-                    
-                    observer.observe(contactSection);
+                        })
+                    }, { threshold: 0.5 })
+
+                    observer.observe(contactSection)
                 }
-            };
+            }
 
             // Add staggered animation delays for feature cards
             document.addEventListener('DOMContentLoaded', function () {
@@ -1177,16 +1185,16 @@
                 })
 
                 // Initialize GTM event tracking
-                gtmEvents.trackContactSectionView();
-                
+                gtmEvents.trackContactSectionView()
+
                 // Add scroll event listener for depth tracking
-                let scrollTimeout;
+                let scrollTimeout
                 window.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimeout);
+                    clearTimeout(scrollTimeout)
                     scrollTimeout = setTimeout(() => {
-                        gtmEvents.trackScrollDepth();
-                    }, 100); // Throttle scroll events
-                });
+                        gtmEvents.trackScrollDepth()
+                    }, 100) // Throttle scroll events
+                })
 
                 // Touch/swipe support for mobile
                 let startX = 0
