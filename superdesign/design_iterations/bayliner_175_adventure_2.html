@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 2014 Bayliner 175 - ADVENTURE AWAITS! 🔥 | AU$18,000</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Architects+Daughter:wght@400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bayliner_theme_2.css">
+    
+    <style>
+        /* Adventure Animation System */
+        .hero-blast {
+            animation: heroBlast 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            opacity: 0;
+            transform: scale(0.8) translateY(60px);
+        }
+        
+        .power-bounce {
+            animation: powerBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            opacity: 0;
+            transform: translateY(40px) rotate(-5deg);
+        }
+        
+        .explosive-enter {
+            animation: explosiveEnter 0.6s ease-out forwards;
+            opacity: 0;
+            transform: scale(0.7) translateY(30px);
+        }
+        
+        .price-fire {
+            animation: priceFire 1.5s infinite alternate ease-in-out;
+        }
+        
+        .action-glow {
+            animation: actionGlow 2s infinite ease-in-out;
+        }
+        
+        .shake-attention {
+            animation: shakeAttention 0.6s ease-in-out infinite;
+        }
+        
+        .photo-zoom {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .photo-zoom:hover {
+            transform: scale(1.15) rotate(2deg);
+            filter: saturate(1.3) brightness(1.1);
+        }
+        
+        .cta-pulse {
+            animation: ctaPulse 2s infinite;
+        }
+        
+        .btn-adventure {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-origin: center;
+        }
+        
+        .btn-adventure:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 20px 40px -8px rgba(251, 146, 60, 0.5);
+        }
+        
+        .btn-adventure:active {
+            transform: scale(0.95);
+        }
+        
+        @keyframes heroBlast {
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes powerBounce {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        @keyframes explosiveEnter {
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        @keyframes priceFire {
+            0% { 
+                text-shadow: 0 0 10px rgba(251, 146, 60, 0.8);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 0 20px rgba(251, 146, 60, 1), 0 0 30px rgba(34, 197, 94, 0.5);
+                transform: scale(1.05);
+            }
+        }
+        
+        @keyframes actionGlow {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7);
+                border-color: var(--adventure-orange);
+            }
+            50% { 
+                box-shadow: 0 0 0 8px rgba(251, 146, 60, 0);
+                border-color: var(--adventure-green);
+            }
+        }
+        
+        @keyframes shakeAttention {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px) rotate(-1deg); }
+            75% { transform: translateX(3px) rotate(1deg); }
+        }
+        
+        @keyframes ctaPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(251, 146, 60, 0);
+            }
+        }
+        
+        /* Adventure theme overrides */
+        body {
+            font-family: var(--font-sans) !important;
+            background: linear-gradient(135deg, var(--background), var(--card)) !important;
+            color: var(--foreground) !important;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-sans) !important;
+            color: var(--foreground) !important;
+            font-weight: 800 !important;
+            letter-spacing: var(--tracking-tight) !important;
+        }
+        
+        .adventure-gradient {
+            background: linear-gradient(45deg, var(--adventure-orange), var(--adventure-green)) !important;
+        }
+        
+        .adventure-text {
+            background: linear-gradient(45deg, var(--adventure-orange), var(--adventure-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dark-card {
+            background: linear-gradient(135deg, var(--card), var(--muted)) !important;
+            border: 2px solid var(--border) !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    
+    <!-- Full-Width Hero Section -->
+    <section class="hero-blast relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="../images/bayliner-175-hero-main.jpg" alt="2014 Bayliner 175 bowrider boat action shot" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40"></div>
+        </div>
+        
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 text-center px-4">
+            <div class="max-w-4xl mx-auto space-y-8">
+                
+                <!-- Adventure Title -->
+                <h1 class="text-6xl lg:text-8xl font-black adventure-text mb-6">
+                    🏄 ADVENTURE AWAITS! 🏄
+                </h1>
+                
+                <div class="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+                    2014 BAYLINER 175 BOWRIDER
+                </div>
+                
+                <!-- Explosive Price -->
+                <div class="price-fire text-5xl lg:text-6xl font-black mb-8">
+                    <span class="line-through text-3xl opacity-60 text-muted-foreground">AU$21,000</span>
+                    <div class="adventure-text">AU$18,000</div>
+                    <div class="text-2xl font-bold text-adventure-green">🔥 SAVE $3,000! 🔥</div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="btn-adventure cta-pulse adventure-gradient text-background px-12 py-6 rounded-lg font-black text-xl tracking-wide">
+                        ⚡ BOOK DEMO NOW ⚡
+                    </button>
+                    <button class="btn-adventure border-4 border-adventure-orange text-adventure-orange hover:bg-adventure-orange hover:text-background px-12 py-6 rounded-lg font-bold text-xl tracking-wide">
+                        📸 SEE ACTION SHOTS
+                    </button>
+                </div>
+                
+                <!-- Location -->
+                <div class="text-xl text-adventure-green font-bold">
+                    📍 JINDALEE BOAT RAMP - BRISBANE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Boat Rocks Section -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-black text-center mb-16 adventure-text">
+                🚀 WHY THIS BOAT ROCKS! 🚀
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Power -->
+                <div class="power-bounce dark-card rounded-xl p-8 text-center action-glow" style="animation-delay: 0.1s">
+                    <div class="text-6xl mb-4">💪</div>
+                    <h3 class="text-2xl font-bold text-adventure-orange mb-4">POWER</h3>
+                    <ul class="text-foreground space-y-2 text-lg">
+                        <li>🎯 Reliable Handling</li>
+                        <li>🎯 Easy Drive</li>
+                        <li>🎯 Bowrider Design</li>
+                    </ul>
+                </div>
+
+                <!-- Sports -->
+                <div class="power-bounce dark-card rounded-xl p-8 text-center action-glow" style="animation-delay: 0.2s">
+                    <div class="text-6xl mb-4">🌊</div>
+                    <h3 class="text-2xl font-bold text-adventure-teal mb-4">SPORTS</h3>
+                    <ul class="text-foreground space-y-2 text-lg">
+                        <li>🏄 Wake Tower</li>
+                        <li>⛱️ Bimini Top</li>
+                        <li>🎿 Ski Ready</li>
+                    </ul>
+                </div>
+
+                <!-- Tech -->
+                <div class="power-bounce dark-card rounded-xl p-8 text-center action-glow" style="animation-delay: 0.3s">
+                    <div class="text-6xl mb-4">🧭</div>
+                    <h3 class="text-2xl font-bold text-adventure-green mb-4">TECH</h3>
+                    <ul class="text-foreground space-y-2 text-lg">
+                        <li>📡 GPS Navigation</li>
+                        <li>🐟 Fish Finder</li>
+                        <li>📱 Garmin echoMAP</li>
+                    </ul>
+                </div>
+
+                <!-- Ready -->
+                <div class="power-bounce dark-card rounded-xl p-8 text-center action-glow" style="animation-delay: 0.4s">
+                    <div class="text-6xl mb-4">🚛</div>
+                    <h3 class="text-2xl font-bold text-adventure-purple mb-4">READY</h3>
+                    <ul class="text-foreground space-y-2 text-lg">
+                        <li>🔧 New Trailer</li>
+                        <li>⚙️ New Axle</li>
+                        <li>🛡️ New Guards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Photo Gallery -->
+    <section class="py-20 bg-gradient-to-br from-muted to-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-black text-center mb-16 adventure-text">
+                🔥 ACTION PHOTO GALLERY 🔥
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Large Featured Action Shot -->
+                <div class="explosive-enter">
+                    <div class="relative bg-muted rounded-2xl overflow-hidden aspect-[4/3] photo-zoom">
+                        <img src="../images/bayliner-175-hero-main.jpg" alt="Bayliner 175 action shot on water" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Grid of smaller photos -->
+                <div class="grid grid-cols-2 gap-4">
+                    
+                    <!-- PLACEHOLDER COMMENT: Wake Tower Photo - /images/bayliner-175-wake-tower-action.jpg -->
+                    <div class="explosive-enter photo-zoom bg-muted rounded-xl overflow-hidden aspect-square" style="animation-delay: 0.1s">
+                        <div class="h-full bg-gradient-to-br from-adventure-teal/20 to-adventure-purple/20 flex items-center justify-center">
+                            <div class="text-center text-foreground">
+                                <i data-lucide="waves" class="h-12 w-12 mx-auto mb-2"></i>
+                                <p class="font-bold">WAKE TOWER</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PLACEHOLDER COMMENT: Interior & Helm - /images/bayliner-175-interior-helm-action.jpg -->
+                    <div class="explosive-enter photo-zoom bg-muted rounded-xl overflow-hidden aspect-square" style="animation-delay: 0.2s">
+                        <div class="h-full bg-gradient-to-br from-adventure-green/20 to-adventure-orange/20 flex items-center justify-center">
+                            <div class="text-center text-foreground">
+                                <i data-lucide="gauge" class="h-12 w-12 mx-auto mb-2"></i>
+                                <p class="font-bold">INTERIOR & HELM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PLACEHOLDER COMMENT: Trailer & Ramp - /images/bayliner-175-trailer-ramp.jpg -->
+                    <div class="explosive-enter photo-zoom bg-muted rounded-xl overflow-hidden aspect-square" style="animation-delay: 0.3s">
+                        <div class="h-full bg-gradient-to-br from-adventure-purple/20 to-adventure-teal/20 flex items-center justify-center">
+                            <div class="text-center text-foreground">
+                                <i data-lucide="truck" class="h-12 w-12 mx-auto mb-2"></i>
+                                <p class="font-bold">TRAILER & RAMP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PLACEHOLDER COMMENT: Bow Seating - /images/bayliner-175-bow-seating-action.jpg -->
+                    <div class="explosive-enter photo-zoom bg-muted rounded-xl overflow-hidden aspect-square" style="animation-delay: 0.4s">
+                        <div class="h-full bg-gradient-to-br from-adventure-orange/20 to-adventure-green/20 flex items-center justify-center">
+                            <div class="text-center text-foreground">
+                                <i data-lucide="armchair" class="h-12 w-12 mx-auto mb-2"></i>
+                                <p class="font-bold">BOW SEATING</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Specs -->
+    <section class="py-20 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-5xl font-black text-center mb-16 adventure-text">
+                ⚡ ADVENTURE SPECS ⚡
+            </h2>
+            
+            <div class="dark-card rounded-2xl p-10">
+                <div class="grid md:grid-cols-2 gap-8 text-lg">
+                    <div class="space-y-4">
+                        <div class="flex items-center text-adventure-orange">
+                            <span class="text-2xl mr-3">🎯</span>
+                            <span class="font-bold">BUILT FOR:</span>
+                            <span class="ml-2 text-foreground">River & Bay Adventures</span>
+                        </div>
+                        <div class="flex items-center text-adventure-teal">
+                            <span class="text-2xl mr-3">📅</span>
+                            <span class="font-bold">YEAR:</span>
+                            <span class="ml-2 text-foreground">2014 (Still Going Strong!)</span>
+                        </div>
+                        <div class="flex items-center text-adventure-green">
+                            <span class="text-2xl mr-3">🎨</span>
+                            <span class="font-bold">STYLE:</span>
+                            <span class="ml-2 text-foreground">Black Beast with White Interior</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center text-adventure-purple">
+                            <span class="text-2xl mr-3">⛽</span>
+                            <span class="font-bold">FUEL:</span>
+                            <span class="ml-2 text-foreground">Petrol Power</span>
+                        </div>
+                        <div class="flex items-center text-adventure-orange">
+                            <span class="text-2xl mr-3">⭐</span>
+                            <span class="font-bold">STATUS:</span>
+                            <span class="ml-2 text-foreground">Great Entry-Level Sports Boat</span>
+                        </div>
+                        <div class="flex items-center text-adventure-red">
+                            <span class="text-2xl mr-3">⚠️</span>
+                            <span class="font-bold">HONEST:</span>
+                            <span class="ml-2 text-muted-foreground">Some port marks, yellow on seats</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Ride CTA -->
+    <section class="py-20 bg-gradient-to-r from-adventure-orange to-adventure-green">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-6xl font-black text-background mb-8 shake-attention">
+                🚨 READY TO RIDE? LET'S GO! 🚨
+            </h2>
+            
+            <div class="bg-background/10 backdrop-blur-sm rounded-2xl p-10 border-4 border-background/30">
+                <div class="mb-8">
+                    <div class="text-3xl font-bold text-background mb-4">
+                        📍 JINDALEE BOAT RAMP DEMO
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+                    <button class="btn-adventure bg-background text-adventure-orange px-10 py-5 rounded-xl font-black text-xl tracking-wider">
+                        🔥 CALL NOW - QUICK DEMO
+                    </button>
+                    <button class="btn-adventure border-4 border-background text-background hover:bg-background hover:text-adventure-orange px-10 py-5 rounded-xl font-bold text-xl tracking-wider">
+                        📧 GET ALL THE DETAILS
+                    </button>
+                </div>
+                
+                <div class="text-4xl font-black text-background price-fire">
+                    💰 AU$18,000 (Down from $21K - ACT FAST!) 💰
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card border-t-4 border-adventure-orange py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-muted-foreground">
+                <p class="text-lg font-bold">&copy; 2024 - BAYLINER 175 ADVENTURE AWAITS - BRISBANE, AUSTRALIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Staggered animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.explosive-enter, .power-bounce');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${(index * 0.1)}s`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2014 Bayliner 175 - Perfect for Water Sports | AU$18,000</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="bayliner_theme_1.css">
+
+        <style>
+            /* Custom animations and overrides */
+            .hero-enter {
+                animation: heroEnter 0.8s ease-out forwards;
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            .nav-enter {
+                animation: navEnter 0.6s ease-out forwards;
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            .price-bounce {
+                animation: priceBounce 1s bounce 0.4s forwards;
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            .feature-card-enter {
+                animation: featureEnter 0.6s ease-out forwards;
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            .photo-hover {
+                transition: all 0.3s ease-out;
+            }
+
+            .photo-hover:hover {
+                transform: scale(1.05);
+                filter: brightness(1.1);
+            }
+
+            .btn-primary {
+                transition: all 0.2s ease-out;
+            }
+
+            .btn-primary:hover {
+                transform: scale(1.02);
+                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+            }
+
+            .btn-primary:active {
+                transform: scale(0.95);
+            }
+
+            @keyframes heroEnter {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes navEnter {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes priceBounce {
+                0% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes featureEnter {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .parallax-hero {
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .card-hover {
+                transition: all 0.25s ease-out;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15);
+            }
+
+            .phone-shake:hover {
+                animation: shake 0.4s ease-out;
+            }
+
+            @keyframes shake {
+
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+
+                25% {
+                    transform: translateX(-2px);
+                }
+
+                75% {
+                    transform: translateX(2px);
+                }
+            }
+
+            /* Important overrides for theme consistency */
+            body {
+                font-family: var(--font-sans) !important;
+                background-color: var(--background) !important;
+                color: var(--foreground) !important;
+            }
+
+            h1,
+            h2,
+            h3 {
+                font-family: var(--font-sans) !important;
+                color: var(--foreground) !important;
+            }
+
+            .bg-primary {
+                background-color: var(--primary) !important;
+            }
+
+            .text-primary-foreground {
+                color: var(--primary-foreground) !important;
+            }
+
+            .border-border {
+                border-color: var(--border) !important;
+            }
+        </style>
+    </head>
+
+    <body class="min-h-screen bg-background text-foreground">
+
+        <!-- Navigation Bar -->
+        <nav class="nav-enter bg-white/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-8">
+                        <div class="flex items-center">
+                            <i data-lucide="anchor" class="h-8 w-8 text-primary"></i>
+                            <span class="ml-2 text-xl font-bold text-foreground">Bayliner 175</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#gallery" class="text-muted-foreground hover:text-primary transition-colors">Photos</a>
+                        <a href="#features" class="text-muted-foreground hover:text-primary transition-colors">Features</a>
+                        <a href="#specs" class="text-muted-foreground hover:text-primary transition-colors">Specs</a>
+                        <a href="#contact" class="btn-primary bg-primary text-primary-foreground px-6 py-2 rounded-lg font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-enter relative overflow-hidden bg-gradient-to-br from-background to-muted">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <!-- Hero Image -->
+                    <div class="relative">
+                        <div class="relative bg-muted rounded-2xl overflow-hidden aspect-[4/3] photo-hover">
+                            <img src="./images/bayliner-175-hero-main.jpg" alt="2014 Bayliner 175 bowrider boat with family enjoying water activities"
+                                 class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Price Badge -->
+                        <div class="price-bounce absolute -top-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-bold text-lg shadow-lg">
+                            <span class="line-through text-sm opacity-75">AU$21,000</span>
+                            <div class="text-2xl">AU$18,000</div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Content -->
+                    <div class="space-y-8">
+                        <div>
+                            <h1 class="text-4xl lg:text-6xl font-bold text-foreground mb-4">
+                                2014 Bayliner 175
+                            </h1>
+                            <p class="text-xl text-muted-foreground mb-6">
+                                Perfect for cruising, skiing, wakeboarding, or just enjoying the water with family and friends.
+                            </p>
+                            <div class="flex items-center space-x-4 text-muted-foreground mb-8">
+                                <div class="flex items-center">
+                                    <i data-lucide="calendar" class="h-5 w-5 mr-2"></i>
+                                    <span>2014</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="palette" class="h-5 w-5 mr-2"></i>
+                                    <span>Black Exterior</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="fuel" class="h-5 w-5 mr-2"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button
+                                    class="btn-primary bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center">
+                                <i data-lucide="phone" class="h-5 w-5 mr-2 phone-shake"></i>
+                                Schedule Demo
+                            </button>
+                            <button
+                                    class="border-2 border-border hover:bg-muted text-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all">
+                                <i data-lucide="images" class="h-5 w-5 mr-2"></i>
+                                View All Photos
+                            </button>
+                        </div>
+
+                        <!-- Location Badge -->
+                        <div class="flex items-center text-muted-foreground">
+                            <i data-lucide="map-pin" class="h-5 w-5 mr-2 text-primary"></i>
+                            <span>Available for viewing & demo at Jindalee boat ramp (Brisbane)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="py-20 bg-muted/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Boat Gallery</h2>
+                
+                <!-- Gallery Navigation -->
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <button id="prevBtn" class="bg-primary text-primary-foreground p-3 rounded-full hover:bg-primary/90 transition-colors">
+                        <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                    </button>
+                    <span class="text-muted-foreground">
+                        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+                    </span>
+                    <button id="nextBtn" class="bg-primary text-primary-foreground p-3 rounded-full hover:bg-primary/90 transition-colors">
+                        <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                    </button>
+                </div>
+
+                <!-- Scrollable Gallery Container -->
+                <div class="relative overflow-hidden rounded-xl">
+                    <div id="gallery-container" class="flex transition-transform duration-300 ease-out" style="transform: translateX(0%)">
+                        
+                        <!-- Photo 1: Bow Seating -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2631.jpg" alt="Bayliner 175 bow seating area" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 2: Wake Tower -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2630.jpg" alt="Bayliner 175 wake tower and bimini" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 3: Helm & Garmin -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2629.jpg" alt="Bayliner 175 helm with Garmin echoMAP navigation" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 4: New Trailer -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_8840.jpg" alt="Bayliner 175 with recently overhauled trailer" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 5: White Interior -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2633.jpg" alt="Bayliner 175 white interior seating" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 6: Boat Detail -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2636.jpg" alt="Bayliner 175 boat detail view" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 7: Boat Detail -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2637.jpg" alt="Bayliner 175 boat detail view" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 8: Water Activity -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2595.jpg" alt="Bayliner 175 on water activity" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 9: Water View -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_2573.jpg" alt="Bayliner 175 water view" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Photo 10: Additional View -->
+                        <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
+                            <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover">
+                                <img src="./images/IMG_8627.jpg" alt="Bayliner 175 additional view" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Gallery Dots Indicator -->
+                <div class="flex justify-center space-x-2 mt-6">
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-primary cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                    <div class="gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features" class="py-20 bg-background">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Reliability -->
+                    <div class="feature-card-enter card-hover bg-card border border-border rounded-xl p-6" style="animation-delay: 0.1s">
+                        <div class="text-primary mb-4">
+                            <i data-lucide="shield-check" class="h-12 w-12"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Reliability</h3>
+                        <ul class="text-muted-foreground space-y-2">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Bayliner 175 bowrider
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Easy handling
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Great layout
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Water Sports -->
+                    <div class="feature-card-enter card-hover bg-card border border-border rounded-xl p-6" style="animation-delay: 0.2s">
+                        <div class="text-primary mb-4">
+                            <i data-lucide="waves" class="h-12 w-12"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Water Sports</h3>
+                        <ul class="text-muted-foreground space-y-2">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Wake tower with bimini
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Perfect for skiing
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Wakeboarding ready
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="feature-card-enter card-hover bg-card border border-border rounded-xl p-6" style="animation-delay: 0.3s">
+                        <div class="text-primary mb-4">
+                            <i data-lucide="compass" class="h-12 w-12"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Navigation</h3>
+                        <ul class="text-muted-foreground space-y-2">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Garmin echoMAP 50dv
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                GPS navigation
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Fish finder included
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trailer -->
+                    <div class="feature-card-enter card-hover bg-card border border-border rounded-xl p-6" style="animation-delay: 0.4s">
+                        <div class="text-primary mb-4">
+                            <i data-lucide="truck" class="h-12 w-12"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Trailer</h3>
+                        <ul class="text-muted-foreground space-y-2">
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Recently overhauled
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                Brand new axle
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check" class="h-4 w-4 text-primary mr-2"></i>
+                                New mudguards
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section id="specs" class="py-20 bg-muted/30">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Specifications</h2>
+
+                <div class="bg-card border border-border rounded-xl p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <i data-lucide="file-text" class="h-6 w-6 mr-2 text-primary"></i>
+                                Boat Details
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-muted-foreground">Year:</span>
+                                    <span class="font-medium">2014</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-foreground">Model:</span>
+                                    <span class="font-medium">Bayliner 175 Bowrider</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-foreground">Exterior Color:</span>
+                                    <span class="font-medium">Black</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-foreground">Interior Color:</span>
+                                    <span class="font-medium">White</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-foreground">Fuel Type:</span>
+                                    <span class="font-medium">Petrol</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <i data-lucide="info" class="h-6 w-6 mr-2 text-primary"></i>
+                                Condition Notes
+                            </h3>
+                            <div class="space-y-3 text-muted-foreground">
+                                <p>• Great entry-level sports boat</p>
+                                <p>• Ideal for river and bay use</p>
+                                <p>• Some marking on port side</p>
+                                <p>• Some yellow on passenger seats</p>
+                                <p>• Recently serviced and maintained</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-background">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Contact & Demo</h2>
+
+                <div class="bg-primary/5 border border-primary/20 rounded-xl p-8">
+                    <div class="text-center mb-8">
+                        <div class="flex items-center justify-center mb-4">
+                            <i data-lucide="map-pin" class="h-8 w-8 text-primary mr-3"></i>
+                            <h3 class="text-2xl font-semibold">Available for Viewing & Demo</h3>
+                        </div>
+                        <p class="text-lg text-muted-foreground">Jindalee boat ramp, Brisbane</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div
+                                 class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center phone-shake cursor-pointer">
+                                <i data-lucide="phone" class="h-5 w-5 mr-2"></i>
+                                Call to Schedule Demo
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-2">Quick response guaranteed</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div
+                                 class="border-2 border-border hover:bg-muted text-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all cursor-pointer">
+                                <i data-lucide="mail" class="h-5 w-5 mr-2"></i>
+                                Send Email Inquiry
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-2">Detailed information available</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8 p-4 bg-accent/10 rounded-lg">
+                        <p class="text-lg font-semibold text-accent-foreground">
+                            <i data-lucide="tag" class="h-5 w-5 inline mr-2"></i>
+                            Save AU$3,000 - Down from AU$21,000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-muted/50 border-t border-border py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-muted-foreground">
+                    <p>&copy; 2024 - Bayliner 175 For Sale - Brisbane, Australia</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Initialize Lucide icons
+            lucide.createIcons()
+
+            // Gallery carousel functionality
+            let currentSlideIndex = 0;
+            const totalSlides = 10;
+            let slidesToShow = 1; // Will be updated based on screen size
+
+            function updateSlidesToShow() {
+                if (window.innerWidth >= 1024) {
+                    slidesToShow = 3; // lg: show 3 slides
+                } else if (window.innerWidth >= 768) {
+                    slidesToShow = 2; // md: show 2 slides
+                } else {
+                    slidesToShow = 1; // sm: show 1 slide
+                }
+            }
+
+            function updateGallery() {
+                const container = document.getElementById('gallery-container');
+                const translateX = -(currentSlideIndex * (100 / slidesToShow));
+                container.style.transform = `translateX(${translateX}%)`;
+                
+                // Update slide counter
+                document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+                
+                // Update dots
+                const dots = document.querySelectorAll('.gallery-dot');
+                dots.forEach((dot, index) => {
+                    if (index === currentSlideIndex) {
+                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-primary cursor-pointer';
+                    } else {
+                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer';
+                    }
+                });
+            }
+
+            function nextSlide() {
+                const maxSlides = Math.max(0, totalSlides - slidesToShow);
+                currentSlideIndex = Math.min(currentSlideIndex + 1, maxSlides);
+                updateGallery();
+            }
+
+            function prevSlide() {
+                currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
+                updateGallery();
+            }
+
+            function goToSlide(index) {
+                const maxSlides = Math.max(0, totalSlides - slidesToShow);
+                currentSlideIndex = Math.min(Math.max(index, 0), maxSlides);
+                updateGallery();
+            }
+
+            // Add staggered animation delays for feature cards
+            document.addEventListener('DOMContentLoaded', function () {
+                const featureCards = document.querySelectorAll('.feature-card-enter')
+                featureCards.forEach((card, index) => {
+                    card.style.animationDelay = `${(index * 0.1)}s`
+                });
+
+                // Initialize gallery
+                updateSlidesToShow();
+                updateGallery();
+
+                // Gallery navigation event listeners
+                document.getElementById('nextBtn').addEventListener('click', nextSlide);
+                document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+                // Dot navigation
+                const dots = document.querySelectorAll('.gallery-dot');
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => goToSlide(index));
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    updateSlidesToShow();
+                    updateGallery();
+                });
+
+                // Touch/swipe support for mobile
+                let startX = 0;
+                let endX = 0;
+                const galleryContainer = document.getElementById('gallery-container');
+
+                galleryContainer.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                galleryContainer.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            nextSlide(); // Swipe left = next
+                        } else {
+                            prevSlide(); // Swipe right = prev
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>
