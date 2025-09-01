@@ -734,12 +734,19 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="mailto:?subject=Inquiry about 2014 Bayliner 175&body=Hi, I'm interested in your 2014 Bayliner 175 for sale. Please send me more details."
-                               class="border-2 border-border hover:bg-muted text-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all cursor-pointer no-underline">
-                                <i data-lucide="mail" class="h-5 w-5 mr-2"></i>
-                                Send Email Inquiry
-                            </a>
-                            <p class="text-sm text-muted-foreground mt-2">Detailed information available</p>
+                            <div class="relative">
+                                <input type="text" 
+                                       value="0437 276 076" 
+                                       readonly
+                                       id="phoneNumberInput"
+                                       class="border-2 border-border hover:bg-muted text-foreground w-full py-4 px-4 rounded-lg font-semibold text-lg text-center transition-all cursor-pointer select-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                                       onclick="copyPhoneNumber(this)"
+                                       onfocus="copyPhoneNumber(this)">
+                                <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                    <i data-lucide="copy" class="h-5 w-5 text-muted-foreground"></i>
+                                </div>
+                            </div>
+                            <p class="text-sm text-muted-foreground mt-2" id="phoneNumberStatus">Click to copy phone number</p>
                         </div>
                     </div>
 
@@ -787,6 +794,44 @@
         <script>
             // Initialize Lucide icons
             lucide.createIcons()
+
+            // Phone number copy functionality
+            function copyPhoneNumber(input) {
+                // Select the text
+                input.select()
+                input.setSelectionRange(0, 99999) // For mobile devices
+
+                try {
+                    // Copy to clipboard
+                    navigator.clipboard.writeText(input.value).then(() => {
+                        // Success feedback
+                        const statusElement = document.getElementById('phoneNumberStatus')
+                        const originalText = statusElement.textContent
+                        statusElement.textContent = 'Phone number copied!'
+                        statusElement.style.color = 'var(--primary)'
+                        
+                        // Reset after 2 seconds
+                        setTimeout(() => {
+                            statusElement.textContent = originalText
+                            statusElement.style.color = ''
+                        }, 2000)
+                    }).catch(() => {
+                        // Fallback for older browsers
+                        document.execCommand('copy')
+                        const statusElement = document.getElementById('phoneNumberStatus')
+                        const originalText = statusElement.textContent
+                        statusElement.textContent = 'Phone number copied!'
+                        statusElement.style.color = 'var(--primary)'
+                        
+                        setTimeout(() => {
+                            statusElement.textContent = originalText
+                            statusElement.style.color = ''
+                        }, 2000)
+                    })
+                } catch (err) {
+                    console.error('Failed to copy phone number:', err)
+                }
+            }
 
             // Gallery carousel functionality
             let currentSlideIndex = 0
