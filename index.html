@@ -380,7 +380,8 @@
                         <a href="#gallery" class="text-muted-foreground hover:text-primary transition-colors">Photos</a>
                         <a href="#features" class="text-muted-foreground hover:text-primary transition-colors">Features</a>
                         <a href="#specs" class="text-muted-foreground hover:text-primary transition-colors">Specs</a>
-                        <a href="#contact" class="btn-primary bg-primary text-primary-foreground px-6 py-2 rounded-lg font-medium">Contact</a>
+                        <a href="#contact" class="btn-primary bg-primary text-primary-foreground px-6 py-2 rounded-lg font-medium"
+                           onclick="gtmEvents.sendEvent('navigation_click', {'button_type': 'nav_contact', 'event_category': 'engagement', 'event_label': 'Navigation contact button'});">Contact</a>
                     </div>
                 </div>
             </div>
@@ -437,11 +438,12 @@
                         <!-- CTA Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="#contact"
-                               class="btn-primary bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center no-underline">
+                               class="btn-primary bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center no-underline"
+                               onclick="gtmEvents.sendEvent('navigation_click', {'button_type': 'hero_contact', 'event_category': 'engagement', 'event_label': 'Hero contact CTA button'});">
                                 <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
                                 Contact
                             </a>
-                            <button onclick="openLightbox(0)"
+                            <button onclick="openLightbox(0); gtmEvents.sendEvent('gallery_interaction', {'action_type': 'view_all_photos', 'event_category': 'engagement', 'event_label': 'Hero view all photos button'});"
                                     class="border-2 border-border hover:bg-muted text-foreground px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center transition-all">
                                 <i data-lucide="images" class="h-5 w-5 mr-2"></i>
                                 View All Photos
@@ -743,7 +745,8 @@
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="text-center">
                             <a href="sms:0437276076?body=Hi, I'm interested in your 2014 Bayliner 175 for sale in Brisbane, QLD."
-                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center cursor-pointer no-underline">
+                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center cursor-pointer no-underline"
+                               onclick="gtmEvents.sendEvent('contact_button_click', {'button_type': 'sms', 'event_category': 'conversion', 'event_label': 'SMS button clicked'}); gtmEvents.sendEvent('high_intent_action', {'action_type': 'sms', 'event_category': 'conversion'}); gtmEvents.sendEvent('made_contact', {'contact_method': 'sms', 'event_category': 'conversion', 'event_label': 'User initiated SMS contact'});">
                                 <i data-lucide="message-circle" class="h-5 w-5 mr-2"></i>
                                 Text Questions
                             </a>
@@ -752,7 +755,8 @@
 
                         <div class="text-center">
                             <a href="tel:0437276076"
-                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center phone-shake cursor-pointer no-underline">
+                               class="btn-primary bg-primary text-primary-foreground w-full py-4 rounded-lg font-semibold text-lg flex items-center justify-center phone-shake cursor-pointer no-underline"
+                               onclick="gtmEvents.sendEvent('contact_button_click', {'button_type': 'phone', 'event_category': 'conversion', 'event_label': 'Phone button clicked'}); gtmEvents.sendEvent('high_intent_action', {'action_type': 'phone', 'event_category': 'conversion'}); gtmEvents.sendEvent('made_contact', {'contact_method': 'phone', 'event_category': 'conversion', 'event_label': 'User initiated phone call'});">
                                 <i data-lucide="phone" class="h-5 w-5 mr-2"></i>
                                 Call to Ask
                             </a>
@@ -826,6 +830,21 @@
                 try {
                     // Copy to clipboard
                     navigator.clipboard.writeText(input.value).then(() => {
+                        // Send GTM events
+                        gtmEvents.sendEvent('phone_copy', {
+                            'event_category': 'conversion',
+                            'event_label': 'Phone number copied to clipboard'
+                        });
+                        gtmEvents.sendEvent('high_intent_action', {
+                            'action_type': 'phone_copy',
+                            'event_category': 'conversion'
+                        });
+                        gtmEvents.sendEvent('made_contact', {
+                            'contact_method': 'phone_copy',
+                            'event_category': 'conversion',
+                            'event_label': 'User copied contact info - likely to make contact'
+                        });
+
                         // Success feedback
                         const statusElement = document.getElementById('phoneNumberStatus')
                         const originalText = statusElement.textContent
@@ -840,6 +859,22 @@
                     }).catch(() => {
                         // Fallback for older browsers
                         document.execCommand('copy')
+                        
+                        // Send GTM events for fallback method too
+                        gtmEvents.sendEvent('phone_copy', {
+                            'event_category': 'conversion',
+                            'event_label': 'Phone number copied to clipboard (fallback)'
+                        });
+                        gtmEvents.sendEvent('high_intent_action', {
+                            'action_type': 'phone_copy',
+                            'event_category': 'conversion'
+                        });
+                        gtmEvents.sendEvent('made_contact', {
+                            'contact_method': 'phone_copy',
+                            'event_category': 'conversion',
+                            'event_label': 'User copied contact info - likely to make contact'
+                        });
+                        
                         const statusElement = document.getElementById('phoneNumberStatus')
                         const originalText = statusElement.textContent
                         statusElement.textContent = 'Phone number copied!'
@@ -926,6 +961,15 @@
             }
 
             function openLightbox(imageIndex) {
+                // Track gallery interaction
+                gtmEvents.sendEvent('gallery_interaction', {
+                    'action_type': 'image_click',
+                    'image_index': imageIndex,
+                    'image_name': lightboxImages[imageIndex] ? lightboxImages[imageIndex].title : `Image ${imageIndex + 1}`,
+                    'event_category': 'engagement',
+                    'event_label': `Clicked image ${imageIndex + 1} to open lightbox`
+                });
+
                 const lightbox = document.getElementById('lightbox')
                 currentLightboxIndex = imageIndex
                 updateLightboxImage()
@@ -1017,6 +1061,68 @@
                 updateGallery()
             }
 
+            // Google Tag Manager Event Tracking
+            const gtmEvents = {
+                scrollDepthTracked: {
+                    '25': false,
+                    '50': false,
+                    '75': false,
+                    '100': false
+                },
+                
+                // Send event to GTM dataLayer
+                sendEvent: function(eventName, parameters = {}) {
+                    if (window.dataLayer) {
+                        window.dataLayer.push({
+                            'event': eventName,
+                            ...parameters
+                        });
+                        console.log('GTM Event:', eventName, parameters);
+                    }
+                },
+                
+                // Track scroll depth
+                trackScrollDepth: function() {
+                    const scrollPercent = Math.round(
+                        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                    );
+                    
+                    // Check each threshold
+                    ['25', '50', '75', '100'].forEach(threshold => {
+                        const numThreshold = parseInt(threshold);
+                        if (scrollPercent >= numThreshold && !this.scrollDepthTracked[threshold]) {
+                            this.scrollDepthTracked[threshold] = true;
+                            this.sendEvent('scroll_depth', {
+                                'scroll_depth': numThreshold,
+                                'event_category': 'engagement',
+                                'event_label': `${numThreshold}% page scroll`
+                            });
+                        }
+                    });
+                },
+                
+                // Track contact section visibility
+                trackContactSectionView: function() {
+                    const contactSection = document.getElementById('contact');
+                    if (!contactSection || contactSection.hasAttribute('data-viewed')) return;
+                    
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                                contactSection.setAttribute('data-viewed', 'true');
+                                this.sendEvent('contact_section_view', {
+                                    'event_category': 'engagement',
+                                    'event_label': 'contact section visible'
+                                });
+                                observer.unobserve(contactSection);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    
+                    observer.observe(contactSection);
+                }
+            };
+
             // Add staggered animation delays for feature cards
             document.addEventListener('DOMContentLoaded', function () {
                 // Initialize lightbox
@@ -1069,6 +1175,18 @@
                     updateSlidesToShow()
                     updateGallery()
                 })
+
+                // Initialize GTM event tracking
+                gtmEvents.trackContactSectionView();
+                
+                // Add scroll event listener for depth tracking
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        gtmEvents.trackScrollDepth();
+                    }, 100); // Throttle scroll events
+                });
 
                 // Touch/swipe support for mobile
                 let startX = 0
