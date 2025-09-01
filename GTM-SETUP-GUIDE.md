@@ -152,7 +152,7 @@ If you also want GA4 analytics data, create these tags:
   - `action_type`: `{{DLV - Action Type}}`
   - `event_category`: `{{DLV - Event Category}}`
   - `event_label`: `{{DLV - Event Label}}`
-- **Triggering**: 
+- **Triggering**:
   - `Contact Button Click`
   - `Phone Number Copied`
   - `High Intent Action`
@@ -181,7 +181,7 @@ If you also want GA4 analytics data, create these tags:
   - `action_type`: `{{DLV - Action Type}}`
   - `image_index`: `{{DLV - Image Index}}`
   - `image_name`: `{{DLV - Image Name}}`
-- **Triggering**: 
+- **Triggering**:
   - `Contact Section View`
   - `Gallery Interaction`
   - `Navigation Click`
@@ -259,7 +259,7 @@ If you created the optional GA4 tags, configure:
 ### Expected Event Flow
 1. User visits page → Page view
 2. Scrolls 25% → `scroll_depth` event
-3. Sees contact section → `contact_section_view` event  
+3. Sees contact section → `contact_section_view` event
 4. Clicks phone button → `contact_button_click`, `high_intent_action`, `made_contact` → **Google Ads Conversion**
 5. Copies phone number → `phone_copy`, `high_intent_action`, `made_contact` → **Google Ads Conversion**
 
@@ -273,7 +273,7 @@ If you created the optional GA4 tags, configure:
 - **High Intent Rate**: High intent conversions ÷ clicks
 
 **Secondary Analytics (if using GA4)**:
-- **Engagement Rate**: `scroll_depth` (75%+) ÷ sessions  
+- **Engagement Rate**: `scroll_depth` (75%+) ÷ sessions
 - **Gallery Engagement**: `gallery_interaction` events ÷ sessions
 
 Your GTM container ID is already: **GTM-TBL95F8R**
@@ -306,3 +306,101 @@ Your GTM container ID is already: **GTM-TBL95F8R**
 4. **Optional**: Add GA4 tags if you want detailed analytics
 
 This setup focuses on what matters most for your boat listing - **tracking actual conversions for your Google Ads campaigns**.
+
+---
+
+## 📢 GOOGLE ADS COPY
+
+### Responsive Search Ads (RSA) Headlines
+**15 Headlines (30 characters max each):**
+
+1. 2014 Bayliner 175 For Sale
+2. Family Bowrider - $18,000
+3. Great Entry Level Boat
+4. Ski, Fish, Cruise
+5. Well-Maintained Condition
+6. View in Brisbane Today
+7. Seats 7 Comfortably
+8. Wake Tower & Bimini
+9. Ready for Summer Fun
+10. Save $3,000 - Was $21K
+11. Brisbane Boat For Sale
+12. Jindalee Boat Ramp
+13. Black Exterior/White Int
+14. Garmin Navigation
+15. Contact Owner Today
+
+### Responsive Search Ads (RSA) Descriptions
+**4 Descriptions (90 characters max each):**
+
+1. Great entry-level 2014 Bayliner 175 bowrider. Brisbane viewing at Jindalee boat ramp.
+2. Family-friendly bowrider perfect for skiing, fishing & cruising. Seats 7. Queensland rego.
+3. Wake tower with bimini, Garmin echoMAP navigation & recently overhauled trailer included.
+4. Reduced to $18,000! Was $21,000. Contact owner for inspection and viewing today.
+
+### Call-Only Ads
+**For Mobile Campaigns:**
+
+**Headline 1:** Bayliner 175 - $18,000
+**Headline 2:** Save $3K - Contact Now
+**Description:** 2014 model, black/white, wake tower. Perfect family boat. Brisbane viewing available.
+**Note:** Phone number will be added via call extension in Google Ads interface
+
+### Display Ad Headlines & Descriptions
+
+**Short Headlines (25 chars):**
+1. Bayliner 175 For Sale
+2. Family Boat $18,000
+3. Save $3,000 Today
+
+**Long Headline (90 chars):**
+Great Entry-Level 2014 Bayliner 175 Bowrider - Wake Tower & Bimini - Brisbane $18,000
+
+**Descriptions:**
+
+- **Short (90 chars):** Perfect family boat for skiing & fishing. Well-maintained. Contact owner today.
+- **Long (90 chars):** This well-maintained Bayliner 175 with wake tower has Garmin navigation. Must see!
+
+### YouTube Ad Scripts
+**6-Second Bumper:**
+"2014 Bayliner 175 for sale. Reduced to $18,000. Contact owner today for viewing."
+
+**15-Second Version:**
+"Looking for a great entry-level family boat? This 2014 Bayliner 175 has wake tower, Garmin navigation, and seats 7. Perfect for skiing, fishing, or cruising. Reduced to just $18,000. Contact the owner today."
+
+### Ad Extensions
+
+**Sitelink Extensions:**
+1. View Gallery - See all 11 photos
+2. Specifications - Full boat details
+3. Contact Owner - Call or text now
+4. Jindalee Location - Brisbane viewing
+
+**Callout Extensions:**
+1. Save $3,000
+2. Queensland Registered
+3. Wake Tower & Bimini
+4. Seats 7 People
+5. Garmin Navigation
+
+**Structured Snippets:**
+- **Features:** Wake Tower, Bimini Top, Garmin Navigation, Recently Overhauled Trailer
+- **Brands:** Bayliner
+
+**Price Extension:**
+- Bayliner 175 Bowrider - From $18,000 - Reduced from $21,000
+
+### Target Keywords Suggestions
+**High Intent:**
+- bayliner 175 for sale brisbane
+- used bowrider boat queensland
+- family boat for sale brisbane
+- bayliner 175 bowrider price
+- boats for sale under 20000 brisbane
+
+**Broad Match:**
+- family boat sale
+- bowrider boat
+- ski boat brisbane
+- fishing boat queensland
+- boat with wake tower
