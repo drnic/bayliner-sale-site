@@ -8,7 +8,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="bayliner_theme_1.css">
+        <link rel="stylesheet" href="theme.css">
 
         <style>
             /* Custom animations and overrides */
@@ -300,6 +300,7 @@
                     opacity: 0;
                     transform: scale(0.9);
                 }
+
                 to {
                     opacity: 1;
                     transform: scale(1);
@@ -440,7 +441,7 @@
         <section id="gallery" class="py-20 bg-muted/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12">Boat Gallery</h2>
-                
+
                 <!-- Gallery Navigation -->
                 <div class="flex items-center justify-center space-x-4 mb-8">
                     <button id="prevBtn" class="bg-primary text-primary-foreground p-3 rounded-full hover:bg-primary/90 transition-colors">
@@ -457,7 +458,7 @@
                 <!-- Scrollable Gallery Container -->
                 <div class="relative overflow-hidden rounded-xl">
                     <div id="gallery-container" class="flex transition-transform duration-300 ease-out" style="transform: translateX(0%)">
-                        
+
                         <!-- Photo 1: Bow Seating -->
                         <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-2">
                             <div class="bg-card rounded-lg overflow-hidden aspect-[4/3] photo-hover" onclick="openLightbox(1)">
@@ -527,7 +528,7 @@
                                 <img src="./images/IMG_8627.jpg" alt="Bayliner 175 additional view" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
 
@@ -779,13 +780,13 @@
             lucide.createIcons()
 
             // Gallery carousel functionality
-            let currentSlideIndex = 0;
-            const totalSlides = 10;
-            let slidesToShow = 1; // Will be updated based on screen size
+            let currentSlideIndex = 0
+            const totalSlides = 10
+            let slidesToShow = 1 // Will be updated based on screen size
 
             // Lightbox functionality
-            let lightboxImages = [];
-            let currentLightboxIndex = 0;
+            let lightboxImages = []
+            let currentLightboxIndex = 0
 
             function initializeLightbox() {
                 // Collect all images from hero and gallery
@@ -845,175 +846,175 @@
                         alt: 'Bayliner 175 additional view',
                         title: 'Additional View'
                     }
-                ];
+                ]
             }
 
             function openLightbox(imageIndex) {
-                const lightbox = document.getElementById('lightbox');
-                currentLightboxIndex = imageIndex;
-                updateLightboxImage();
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-                
+                const lightbox = document.getElementById('lightbox')
+                currentLightboxIndex = imageIndex
+                updateLightboxImage()
+                lightbox.classList.add('active')
+                document.body.style.overflow = 'hidden' // Prevent scrolling
+
                 // Re-initialize icons after DOM changes
-                setTimeout(() => lucide.createIcons(), 100);
+                setTimeout(() => lucide.createIcons(), 100)
             }
 
             function closeLightbox() {
-                const lightbox = document.getElementById('lightbox');
-                lightbox.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
+                const lightbox = document.getElementById('lightbox')
+                lightbox.classList.remove('active')
+                document.body.style.overflow = '' // Restore scrolling
             }
 
             function nextLightboxImage() {
-                currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length;
-                updateLightboxImage();
+                currentLightboxIndex = (currentLightboxIndex + 1) % lightboxImages.length
+                updateLightboxImage()
             }
 
             function prevLightboxImage() {
-                currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-                updateLightboxImage();
+                currentLightboxIndex = (currentLightboxIndex - 1 + lightboxImages.length) % lightboxImages.length
+                updateLightboxImage()
             }
 
             function updateLightboxImage() {
-                const image = document.getElementById('lightboxImage');
-                const title = document.getElementById('lightboxTitle');
-                const counter = document.getElementById('lightboxCounter');
-                const prevBtn = document.getElementById('prevLightbox');
-                const nextBtn = document.getElementById('nextLightbox');
+                const image = document.getElementById('lightboxImage')
+                const title = document.getElementById('lightboxTitle')
+                const counter = document.getElementById('lightboxCounter')
+                const prevBtn = document.getElementById('prevLightbox')
+                const nextBtn = document.getElementById('nextLightbox')
 
-                const currentImage = lightboxImages[currentLightboxIndex];
-                
-                image.src = currentImage.src;
-                image.alt = currentImage.alt;
-                title.textContent = currentImage.title;
-                counter.textContent = `${currentLightboxIndex + 1} / ${lightboxImages.length}`;
+                const currentImage = lightboxImages[currentLightboxIndex]
+
+                image.src = currentImage.src
+                image.alt = currentImage.alt
+                title.textContent = currentImage.title
+                counter.textContent = `${currentLightboxIndex + 1} / ${lightboxImages.length}`
 
                 // Update navigation buttons
-                prevBtn.disabled = false;
-                nextBtn.disabled = false;
+                prevBtn.disabled = false
+                nextBtn.disabled = false
             }
 
             function updateSlidesToShow() {
                 if (window.innerWidth >= 1024) {
-                    slidesToShow = 3; // lg: show 3 slides
+                    slidesToShow = 3 // lg: show 3 slides
                 } else if (window.innerWidth >= 768) {
-                    slidesToShow = 2; // md: show 2 slides
+                    slidesToShow = 2 // md: show 2 slides
                 } else {
-                    slidesToShow = 1; // sm: show 1 slide
+                    slidesToShow = 1 // sm: show 1 slide
                 }
             }
 
             function updateGallery() {
-                const container = document.getElementById('gallery-container');
-                const translateX = -(currentSlideIndex * (100 / slidesToShow));
-                container.style.transform = `translateX(${translateX}%)`;
-                
+                const container = document.getElementById('gallery-container')
+                const translateX = -(currentSlideIndex * (100 / slidesToShow))
+                container.style.transform = `translateX(${translateX}%)`
+
                 // Update slide counter
-                document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
-                
+                document.getElementById('currentSlide').textContent = currentSlideIndex + 1
+
                 // Update dots
-                const dots = document.querySelectorAll('.gallery-dot');
+                const dots = document.querySelectorAll('.gallery-dot')
                 dots.forEach((dot, index) => {
                     if (index === currentSlideIndex) {
-                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-primary cursor-pointer';
+                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-primary cursor-pointer'
                     } else {
-                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer';
+                        dot.className = 'gallery-dot w-2 h-2 rounded-full bg-muted-foreground/30 cursor-pointer'
                     }
-                });
+                })
             }
 
             function nextSlide() {
-                const maxSlides = Math.max(0, totalSlides - slidesToShow);
-                currentSlideIndex = Math.min(currentSlideIndex + 1, maxSlides);
-                updateGallery();
+                const maxSlides = Math.max(0, totalSlides - slidesToShow)
+                currentSlideIndex = Math.min(currentSlideIndex + 1, maxSlides)
+                updateGallery()
             }
 
             function prevSlide() {
-                currentSlideIndex = Math.max(currentSlideIndex - 1, 0);
-                updateGallery();
+                currentSlideIndex = Math.max(currentSlideIndex - 1, 0)
+                updateGallery()
             }
 
             function goToSlide(index) {
-                const maxSlides = Math.max(0, totalSlides - slidesToShow);
-                currentSlideIndex = Math.min(Math.max(index, 0), maxSlides);
-                updateGallery();
+                const maxSlides = Math.max(0, totalSlides - slidesToShow)
+                currentSlideIndex = Math.min(Math.max(index, 0), maxSlides)
+                updateGallery()
             }
 
             // Add staggered animation delays for feature cards
             document.addEventListener('DOMContentLoaded', function () {
                 // Initialize lightbox
-                initializeLightbox();
+                initializeLightbox()
 
                 const featureCards = document.querySelectorAll('.feature-card-enter')
                 featureCards.forEach((card, index) => {
                     card.style.animationDelay = `${(index * 0.1)}s`
-                });
+                })
 
                 // Initialize gallery
-                updateSlidesToShow();
-                updateGallery();
+                updateSlidesToShow()
+                updateGallery()
 
                 // Gallery navigation event listeners
-                document.getElementById('nextBtn').addEventListener('click', nextSlide);
-                document.getElementById('prevBtn').addEventListener('click', prevSlide);
+                document.getElementById('nextBtn').addEventListener('click', nextSlide)
+                document.getElementById('prevBtn').addEventListener('click', prevSlide)
 
                 // Lightbox event listeners
-                document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
-                document.getElementById('prevLightbox').addEventListener('click', prevLightboxImage);
-                document.getElementById('nextLightbox').addEventListener('click', nextLightboxImage);
+                document.getElementById('closeLightbox').addEventListener('click', closeLightbox)
+                document.getElementById('prevLightbox').addEventListener('click', prevLightboxImage)
+                document.getElementById('nextLightbox').addEventListener('click', nextLightboxImage)
 
                 // Close lightbox with Escape key
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape') {
-                        closeLightbox();
+                        closeLightbox()
                     } else if (e.key === 'ArrowRight') {
-                        nextLightboxImage();
+                        nextLightboxImage()
                     } else if (e.key === 'ArrowLeft') {
-                        prevLightboxImage();
+                        prevLightboxImage()
                     }
-                });
+                })
 
                 // Close lightbox when clicking outside the image
                 document.getElementById('lightbox').addEventListener('click', (e) => {
                     if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-container')) {
-                        closeLightbox();
+                        closeLightbox()
                     }
-                });
+                })
 
                 // Dot navigation
-                const dots = document.querySelectorAll('.gallery-dot');
+                const dots = document.querySelectorAll('.gallery-dot')
                 dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => goToSlide(index));
-                });
+                    dot.addEventListener('click', () => goToSlide(index))
+                })
 
                 // Handle window resize
                 window.addEventListener('resize', () => {
-                    updateSlidesToShow();
-                    updateGallery();
-                });
+                    updateSlidesToShow()
+                    updateGallery()
+                })
 
                 // Touch/swipe support for mobile
-                let startX = 0;
-                let endX = 0;
-                const galleryContainer = document.getElementById('gallery-container');
+                let startX = 0
+                let endX = 0
+                const galleryContainer = document.getElementById('gallery-container')
 
                 galleryContainer.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                });
+                    startX = e.touches[0].clientX
+                })
 
                 galleryContainer.addEventListener('touchend', (e) => {
-                    endX = e.changedTouches[0].clientX;
-                    const diff = startX - endX;
-                    
+                    endX = e.changedTouches[0].clientX
+                    const diff = startX - endX
+
                     if (Math.abs(diff) > 50) { // Minimum swipe distance
                         if (diff > 0) {
-                            nextSlide(); // Swipe left = next
+                            nextSlide() // Swipe left = next
                         } else {
-                            prevSlide(); // Swipe right = prev
+                            prevSlide() // Swipe right = prev
                         }
                     }
-                });
+                })
             });
         </script>
     </body>
